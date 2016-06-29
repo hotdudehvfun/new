@@ -1,0 +1,10 @@
+{
+  "name": "A Notes",
+  "description": "Note app",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/logo.png"
+  },
+  "default_locale": "en",
+  "type": "privileged"
+}

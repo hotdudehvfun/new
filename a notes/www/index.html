@@ -1,0 +1,247 @@
+<html><head>
+	<title>index</title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+	<link rel="stylesheet" type="text/css" href="w3.css">
+	<link rel="stylesheet" type="text/css" href="mycss.css">
+
+</head>
+
+<body id="body">
+
+<!-- nav bar -->
+<div class="w3-navbar w3-card-8 " style="
+    height: 54px;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0px;
+    background-color: white;
+">
+  <div onclick="getData('Spellings');" style="
+    border: 1px solid #d6d6d6;
+    display: inline;
+    padding: 5px;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    border-radius: 3px;
+">Spellings</div>
+
+
+  <div onclick="getData('Synonyms');" style="
+    border: 1px solid #d6d6d6;
+    display: inline;
+    padding: 5px;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    border-radius: 3px;
+">Synonyms</div>
+
+
+  <div onclick="getData('Antonyms');" style="
+    border: 1px solid #d6d6d6;
+    display: inline;
+    padding: 5px;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    border-radius: 3px;
+">Antonyms</div>
+
+
+  
+</div>
+
+<div class="w3-navbar" style="
+    height: 54px;
+    position: relative; 
+    width: 100%;
+    top: 0px;
+">
+</div>
+
+<!-- add button -->
+<div onclick="showInputPopup()" style="
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background: #FD6466;
+    color: white;
+    padding-left: 10px;
+    font-size: 25px;
+    z-index: 999;
+    box-shadow: -2px 1px 2px rgba(128, 128, 128, 0.44);
+    right: 10px;
+    bottom: 14px;
+">
+   +
+</div>
+
+
+
+<!-- input popup  -->
+<div id="input-popup-outter" style="
+    position: fixed;
+    height: 75%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    z-index: 998;
+    overflow: auto;
+    display: none;
+    top: 10%;
+">
+  <div style="
+    width: 90%;
+    height: 90%;
+    background: rgba(255, 255, 255, 0.61);
+    margin-left: 5%;
+    margin-top: 5%;
+">
+  
+  <h2 style="
+    text-align: center;
+    color: #e49b77;
+">Add something</h2>
+<select id="section" class="w3-select" name="option" style="
+    border-bottom: 1px solid #c3c3c3;
+    color: #9E9E9E;
+">
+  <option value="" disabled="" selected="">Choose section</option>
+  <option value="Spellings">Spellings</option>
+  <option value="Synonyms">Synonyms</option>
+  <option value="Antonyms">Antonyms</option>
+</select>
+
+<input id="main-text" class="w3-input" type="text" placeholder="Main text"><br>
+<textarea id="sub-text" class="w3-input" placeholder="Sub text" style="margin: 0px -1px 0px 0px;"></textarea>
+<button onclick="addData();" class="w3-btn " style="
+    background: #00BCD4;
+">Add</button>
+<button onclick="closeInputPopup();" class="w3-btn " style="
+    background: #fd6466;
+    float: right;
+">Cancel</button>
+
+<div style="
+    border: 1px solid #FFC107;
+    margin-top: 10px;
+    border-radius: 2px;
+    background: rgba(255, 193, 7, 0.18);
+    color: rgb(208, 124, 0);
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s all;
+" id="msg">
+  Message here!</div>
+
+
+</div>	
+</div>
+
+
+
+
+
+<!-- remove popup  -->
+<div id="remove-popup-outter" style="
+    position: fixed;
+    height: 40%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    z-index: 999;
+    overflow: auto;
+    display: none;
+    top: 40%;
+">
+  <div style="
+    width: 90%;
+    height: 90%;
+    background: rgba(255, 255, 255, 0.61);
+    margin-left: 5%;
+    margin-top: 5%;
+">
+<div style="
+    border: 1px solid #F44336;
+    margin-top: 10px;
+    border-radius: 2px;
+    background: rgba(244, 67, 54, 0.16);
+    color: rgb(21, 21, 21);
+    text-align: center;
+    opacity: 1;
+    transition: 0.5s all;
+">
+  Are you sure you want to remove this card!!!</div>
+<button onclick="closeRemovePopup();" class="w3-btn " style="
+    background: #00BCD4;
+    margin-top: 20%;
+">Cancel</button>
+<button onclick="removeData();" class="w3-btn " style="
+    background: #fd6466;
+    float: right;
+    margin-top: 20%;
+">Remove</button>
+
+
+
+  
+</div>	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- card  -->
+
+<div id="data-container" style="-webkit-filter: blur(0px);" >
+
+
+  
+
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="locker.js"></script>
+<script type="text/javascript" src="myscript.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+
+</script>
+
+</body></html>

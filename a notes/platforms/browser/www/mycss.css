@@ -1,0 +1,75 @@
+@media screen and (min-width: 581px) and (max-width: 1760px){
+    #expandingHeader 
+    {
+        line-height:5.2vw;
+        font-size: 5.99vw;
+    }
+    #tagLine {
+        letter-spacing: .15vw;
+        font-size: 1.7vw;
+        line-height:1.0vw;
+    }
+}
+
+@media screen and (min-width: 1761px){
+    #expandingHeader {
+        line-height:.9em;
+        font-size: 7.03em;
+
+    }
+    #tagLine {
+        letter-spacing: .15vw;
+        font-size: 1.7vw;
+        line-height:1.0vw;
+    }
+}
+
+@media screen and (max-width: 580px){
+    #expandingHeader {
+        line-height:.9em;
+        font-size: 2.3em;
+    }
+    #tagLine {
+        letter-spacing: .1em;
+        font-size: .65em;
+        line-height: .10em;
+    }
+}
+	body
+	{
+		    background: rgba(208, 208, 208, 0.08);
+		    
+	}
+	.outer-container
+	{
+    position : absolute;
+    display: table;
+    width: 100%; /* This could be ANY width */
+    height: 100%; /* This could be ANY height */
+    background: rgba(208, 208, 208, 0.08);
+    transition: 0.5s all;
+	}
+
+.inner-container {
+    
+    vertical-align: middle;
+    text-align: center;
+     margin-top: 40px;
+}
+
+.centered-content 
+{
+    background: #F5EA74;
+    border: 1px solid #d8d8d8;
+    margin: 30px;
+    text-align: center;
+    color: #713c18;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    box-shadow: 0px 15px 22px rgba(128, 128, 128, 0.2);
+}
+
+.centered-content :first-child 
+{ 
+    border-bottom:1px solid;
+}
