@@ -1276,28 +1276,45 @@ var master=["APD",
 "Duties & Responsibilities of Sectors",
 "Relational database management system"];
 
-function hasWord(original,word)
+function getIndicesOf(searchStr, str)
 {
-    // original=original.toLowerCase();
-    // word=word.toLowerCase();
-    return(original.indexOf(word))
+    var searchStrLen = searchStr.length;
+    if (searchStrLen == 0) {
+        return [];
+    }
+    var startIndex = 0, index, indices = [];
+    while ((index = str.indexOf(searchStr, startIndex)) > -1) {
+        indices.push(index);
+        startIndex = index + searchStrLen;
+    }
+    return indices;
 }
 
-function searchWords()
+function addLinkAtIndex(index,original,keyword)
+{
+	original=original.substr(0,index)+"[["+original.substr(index,keyword.length)+"]]"+original.substr(index+keyword.length);
+	return original;
+}
+
+function searchAndAddLink()
 {
     var original=document.getElementsByTagName('textarea')[0].value;
     var count=0;
     for (var i = 0; i < master.length; i++)
     {
-        var index=hasWord(original,master[i]);
-        if (index!=-1)
+        var indices=getIndicesOf(master[i],original);
+        if (indices.length>0)
         {
-        	count++;
+        	count+=indices.length;
             //add [[]]
-            original=original.substr(0,index)+"[["+original.substr(index,master[i].length)+"]]"+original.substr(index+master[i].length);
+            for (var j = 0; j < indices.length; j++)
+            {
+            	original=addLinkAtIndex(indices[j],original,master[i]);
+            }
+
         }
     }
     document.getElementsByTagName('textarea')[0].value=original;
     console.log(count+" links");
 }
-searchWords();
+searchAndAddLink();
