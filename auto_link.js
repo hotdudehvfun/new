@@ -87,7 +87,7 @@ var master=["APD",
 "Crime",
 "Range",
 "Death",
-"Zigbee"
+"Zigbee",
 "Siren",
 "ONVIF",
 "Ganja",
@@ -1278,16 +1278,26 @@ var master=["APD",
 
 function hasWord(original,word)
 {
-    original=original.toLowerCase();
-    word=word.toLowerCase();
-    return(original==word)
+    // original=original.toLowerCase();
+    // word=word.toLowerCase();
+    return(original.indexOf(word))
 }
 
 function searchWords()
 {
     var original=document.getElementsByTagName('textarea')[0].value;
+    var count=0;
     for (var i = 0; i < master.length; i++)
     {
-        console.log(hasWord(original,master[i]));
+        var index=hasWord(original,master[i]);
+        if (index!=-1)
+        {
+        	count++;
+            //add [[]]
+            original=original.substr(0,index)+"[["+original.substr(index,master[i].length)+"]]"+original.substr(index+master[i].length);
+        }
     }
+    document.getElementsByTagName('textarea')[0].value=original;
+    console.log(count+" links");
 }
+searchWords();
